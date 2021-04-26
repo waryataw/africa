@@ -23,9 +23,12 @@ struct ContentView: View {
                     )
                 
                 ForEach(animals) { animal in
-                    AnimalListItemView(animal: animal)
+                    NavigationLink(
+                        destination: AnimalDetailView(animal: animal)){
+                        AnimalListItemView(animal: animal)
+                    } //: LINK
                 }
-            } //: LIST)
+            } //: LIST
             .navigationBarTitle("Africa", displayMode: .large)
         } //: NAVIGATION
     }
